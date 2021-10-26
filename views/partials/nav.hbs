@@ -1,0 +1,25 @@
+<nav id="nav-bar">
+     <div id="brand" class="nav-items">
+            <a href="/" id="brand-anchor"><span id="brand-text"><i style="margin-right: .2rem;">m</i>PA</span></a>
+    </div>
+       
+
+<input id="search-text" name="search-text" type="text" placeholder="Search.." >
+<i id="search-button" class="fa fa-search"></i>
+
+
+
+ <form method="get" action="/postimage">
+ <button id="post-button" type="submit" class="btn btn-success" >Post</button> </form>
+    
+     
+
+    {{#if logged}}
+    <a id="logout-button" class="authenticate-button nav-items anchor-buttons">Log Out</a>
+   </nav> 
+    {{else}}
+    <a href="/login" id="login-button" class="authenticate-button nav-items anchor-buttons">Log in</a>
+    {{/if}}
+    </form>
+   </nav> 
+   </div>

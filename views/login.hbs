@@ -1,0 +1,27 @@
+<div class="form-container">
+    <header class="form-header">
+        <h1>
+            Log-in Form
+        </h1>
+    </header>
+
+    <form id="login-form" class"form-grid-login" method="POST" action="/users/login"
+        enctype="application/x-www-form-urlencoded">
+
+        <label class="tags log-lbl-usname" for="username"> Username:</label>
+        <input class="text-input log-input-uname" id="username" type="text" placeholder="Username" required
+            name="username">
+
+
+        <label class="tags log-lbl-passwd" for="passwd"> Password:</label>
+        <input class="text-input log-input-passwd" id="passwd" type="password" placeholder="Password" required
+            name="password">
+
+        <button id="submit" class="btn btn-success login-submit form-button" type="submit">Submit</button>
+        <button id="cancel" class="btn btn-danger login-reset form-button" type="reset">Clear</button>
+
+    </form>
+    <div id="make-account">Do not have an account?
+        <a href="/registration">Register Here!</a>
+    </div>
+</div>

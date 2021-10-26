@@ -1,0 +1,41 @@
+
+<div class="form-container">
+  <header class="form-header">
+    <h1>
+      Registration Page
+    </h1>
+  </header>
+  <form id="form-grid-reg" class="form-grid-reg" method="POST" action="/users/register"
+    enctype="application/x-www-form-urlencoded">
+
+    <label id="lblusername" class="tags reg-lbl-uname" for="username">Username</label>
+    <input id="username" class="text-input reg-input-uname" type="text" 
+    placeholder="Username" required name="username" >
+
+    <label id="lblemail" class="tags reg-lbl-email" for="email">Email</label>
+    <input id="email" class="text-input reg-input-email" type="email" 
+    placeholder="Email" required name="email">
+
+    <label id="lblpasswd" class="tags reg-lbl-passwd" for="passwd">Password</label>
+    <input id="passwd" class="text-input reg-input-passwd" type="password" 
+    placeholder="Password" required name="password">
+
+    <label id="lblcpasswd" class="tags reg-lbl-cpasswd" for="passwd">Confirm Password</label>
+    <input id="cpasswd" class="text-input reg-input-cpasswd" type="password" 
+    placeholder="Confirm Password"required name="cpassword" >
+
+    <label id="lblaoc" class="checkbox">
+      <input type="checkbox" id="aoc"> Please confirm, are you 13 or older?
+    </label>
+
+    <label id="lbltos-pr" class="checkbox">
+      <input type="checkbox" id="tos-pr"> I accept <a href="">Terms of Service</a> and <a href="">Privacy Rules</a>
+    </label>
+
+    <button id="submit" type="submit" class="btn btn-success" >Submit</button>
+    <button id="cancel" type="reset"class="btn btn-danger">Clear</button>
+  
+  </form>
+  <div id="message"></div>
+</div>
+

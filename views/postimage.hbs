@@ -1,0 +1,52 @@
+<div class="form-container">
+    <header class="form-header">
+        <h1>
+            Post an Image Form
+        </h1>
+    </header>
+    <form id="post-image" class="form-grid-postimage"   method="POST" enctype="multipart/form-data">
+   
+
+        <label for="post-title" class="tags post-lbl-title">Post Title:</label>
+        <input id="post-title" class="text-input post-input-title" type="text" placeholder="Post Title" name="title"
+            required />
+
+        <label for="post-desc" class="tags post-lbl-desc">Post Description:</label>
+        <input id="post-desc" class="text-input post-input-desc" type="text" placeholder="Post Description Here"
+            name="description" required />
+
+        <label class="tags post-lbl-image"> Upload an Image </label>
+        <input id="img-select" class="text-input post-input-image" type="file" name="uploadImage" required />
+
+
+        <label class="checkbox aop">
+            <input type="checkbox" id="aup" required /><a href="#">Acceptable Use Policy</a>
+        </label>
+
+        <button id="submit" class="btn btn-success post-submit form-button" type="submit">Submit</button>
+        <button id="cancel" class="btn btn-danger post-cancel form-button" type="reset">Cancel</button>
+    </form>
+</div>
+   <script>
+        const _form = document.getElementById('post-image');
+        _form.onsubmit = function (event) {
+            event.preventDefault();
+             let _body = new FormData(_form);
+        
+        fetch('/posts/createPost', {
+            body: _body,
+            method: "POST"
+        })
+            .then((data) => {
+                console.log(data);
+                return data.json();
+            })
+            .then((dataAsObject) => {
+                console.log(dataAsObject);
+                alert(dataAsObject.message);
+                location.replace(dataAsObject.redirect);
+            })
+            .catch(err => console.log(err));
+    }
+    </script>
+
